@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: cec2fadf5c78a5e468ff14775bb3fecc
+  - enabled: 1
+    path: Assets/Scenes/MoodThermometer.unity
+    guid: 3666912e8bd93ce4ca6f28b14683eab0
+  - enabled: 1
+    path: Assets/Scenes/BreathingScreen.unity
+    guid: 771a624f9e1085f42975c76c2d7ba0fb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

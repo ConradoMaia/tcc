@@ -3,14 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public void CarregarCenaRespiracao()
+    public void CarregarCena()
     {
-        SceneManager.LoadScene("Respiracao");
-    }
-
-    public void CarregarSegunda()
-    {
-        SceneManager.LoadScene("level1");
+        SceneManager.LoadScene("MoodThermometer");
     }
 
     public void SairDoJogo()
