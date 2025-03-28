@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 607a558521f56b64e85230dbe782b789
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 446960519571122376
+    second: "Bot\xE3o jogar_0"
+  - first:
+      213: 7841646120254839501
+    second: "Bot\xE3o jogar_1"
+  - first:
+      213: 3268418024122764163
+    second: "Bot\xE3o jogar_2"
+  - first:
+      213: 2748945110181356304
+    second: "Bot\xE3o jogar_3"
+  - first:
+      213: 6574292514339432024
+    second: "Bot\xE3o jogar_4"
+  - first:
+      213: -6645351923280387230
+    second: "Bot\xE3o jogar_5"
+  - first:
+      213: -3232343255541420309
+    second: "Bot\xE3o jogar_6"
+  - first:
+      213: -8164759685843043399
+    second: "Bot\xE3o jogar_7"
+  - first:
+      213: 3485337441176903713
+    second: "Bot\xE3o jogar_8"
+  - first:
+      213: 7274356286499139190
+    second: "Bot\xE3o jogar_9"
+  - first:
+      213: 700675709197130451
+    second: "Bot\xE3o jogar_10"
+  - first:
+      213: -6408198958073243056
+    second: "Bot\xE3o jogar_11"
+  - first:
+      213: -774495371611957085
+    second: "Bot\xE3o jogar_12"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_0"
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1200
+        width: 121
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c829a5793ce33600800000000000000
+      internalID: 446960519571122376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_1"
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 1240
+        width: 53
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca1c1c799f13dc60800000000000000
+      internalID: 7841646120254839501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_2"
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1203
+        width: 121
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b425940e0cb5d20800000000000000
+      internalID: 3268418024122764163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_3"
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1093
+        width: 181
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013286f5307362620800000000000000
+      internalID: 2748945110181356304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_4"
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 733
+        width: 463
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85626bea5349c3b50800000000000000
+      internalID: 6574292514339432024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_5"
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1098
+        width: 181
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263e96562a7f6c3a0800000000000000
+      internalID: -6645351923280387230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_6"
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 930
+        width: 202
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beee25d4fe86423d0800000000000000
+      internalID: -3232343255541420309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_7"
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 937
+        width: 201
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb35e01352f0be80800000000000000
+      internalID: -8164759685843043399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_8"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 701
+        width: 181
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120e7b7cfe76e5030800000000000000
+      internalID: 3485337441176903713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_9"
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 536
+        width: 121
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67e296a5084b3f460800000000000000
+      internalID: 7274356286499139190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_10"
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 539
+        width: 121
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da907d58dc49b900800000000000000
+      internalID: 700675709197130451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_11"
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 706
+        width: 181
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a140eeff08117a0800000000000000
+      internalID: -6408198958073243056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o jogar_12"
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 479
+        width: 54
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a892ee10907045f0800000000000000
+      internalID: -774495371611957085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Bot\xE3o jogar_0": 446960519571122376
+      "Bot\xE3o jogar_1": 7841646120254839501
+      "Bot\xE3o jogar_10": 700675709197130451
+      "Bot\xE3o jogar_11": -6408198958073243056
+      "Bot\xE3o jogar_12": -774495371611957085
+      "Bot\xE3o jogar_2": 3268418024122764163
+      "Bot\xE3o jogar_3": 2748945110181356304
+      "Bot\xE3o jogar_4": 6574292514339432024
+      "Bot\xE3o jogar_5": -6645351923280387230
+      "Bot\xE3o jogar_6": -3232343255541420309
+      "Bot\xE3o jogar_7": -8164759685843043399
+      "Bot\xE3o jogar_8": 3485337441176903713
+      "Bot\xE3o jogar_9": 7274356286499139190
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
