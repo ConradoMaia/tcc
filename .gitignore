@@ -79,3 +79,6 @@ crashlytics-build.properties
 /tcc/Library/BurstCache
 /tcc/Library
 /tcc/Logs
+/tcc/Assets/LeanTween
+/tcc/Logs
+/tcc/Logs

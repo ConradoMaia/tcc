@@ -8,6 +8,11 @@ public class InitialMenuController : MonoBehaviour
         SceneManager.LoadScene("MoodThermometer");
     }
 
+    public void CarregarCena2()
+    {
+        SceneManager.LoadScene("MoodThermometer");
+    }
+
     public void SairDoJogo()
     {
         Application.Quit();

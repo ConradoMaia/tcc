@@ -69,6 +69,6 @@ public class RespiracaoController : MonoBehaviour
     public void Continuar()
     {
         // Carregar a próxima cena ou etapa
-        SceneManager.LoadScene("ProximaCena"); // Substitua "ProximaCena" pelo nome da próxima cena
+        SceneManager.LoadScene("FearList");
     }
 }
