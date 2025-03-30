@@ -78,3 +78,4 @@ crashlytics-build.properties
 /tcc/Library/ShaderCache
 /tcc/Library/BurstCache
 /tcc/Library
+/tcc/Logs
