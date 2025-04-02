@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 90837802b6d5f1842992ad18404bc605
+guid: 824d086ec528da7468c44d3e6db0ca21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9192288370728422018
-    second: 1534_0
+      213: 8110611579736410859
+    second: Escada_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,23 +139,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1534_0
+      name: Escada_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 1200
+        width: 270
+        height: 1920
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e7537cdfd6e6e6080800000000000000
-      internalID: -9192288370728422018
+      spriteID: d9e228e0fb4dba4469fee34c289a951e
+      internalID: -1270187206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escada_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 270
+        height: 1920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d514ef5eb3ea248a5b8b388036d90a
+      internalID: -1372654091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escada_2
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 270
+        height: 1920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51dd8441be2f4ec4681d7830c2c690c5
+      internalID: -1743168504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escada_3
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 0
+        width: 270
+        height: 1920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1189a0c00d2da424bb5ca83c8b9ae7e9
+      internalID: -862746798
       vertices: []
       indices: 
       edges: []
@@ -164,7 +230,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6d5f6d39168cce047b30d9a2005c4421
     internalID: 0
     vertices: []
     indices: 
@@ -173,7 +239,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Escada_0: -1270187206
+      Escada_1: -1372654091
+      Escada_2: -1743168504
+      Escada_3: -862746798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
