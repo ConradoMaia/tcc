@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelMenuManager : MonoBehaviour
@@ -33,6 +34,6 @@ public class LevelMenuManager : MonoBehaviour
     {
         // Aqui você pode carregar a cena correspondente ao nível atual
         UnityEngine.Debug.Log("Jogando o nível: " + (currentLevel + 1));
-        // Exemplo: SceneManager.LoadScene("Level" + (currentLevel + 1));
+        SceneManager.LoadScene("Level" + (currentLevel + 1));
     }
 }

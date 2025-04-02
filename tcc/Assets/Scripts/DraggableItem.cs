@@ -4,10 +4,10 @@ using UnityEngine.EventSystems;
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Transform originalParent;
+    private Vector3 originalPosition;
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
     private RectTransform parentRectTransform; // Referência ao painel pai
-    private int originalSiblingIndex;
 
     private void Awake()
     {
@@ -18,8 +18,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnBeginDrag(PointerEventData eventData)
     {
         originalParent = transform.parent;
+        originalPosition = transform.position;
         parentRectTransform = originalParent.GetComponent<RectTransform>(); // Obtém o RectTransform do painel pai
-        originalSiblingIndex = transform.GetSiblingIndex();
 
         // Reduz a opacidade para dar feedback visual
         canvasGroup.alpha = 0.6f;
@@ -42,21 +42,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, worldCorners[0].y, worldCorners[1].y); // Limita no eixo Y
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, worldCorners[0].x, worldCorners[2].x); // Limita no eixo X
         rectTransform.position = clampedPosition;
-
-        // Detecta a posição do item em relação aos outros no contêiner
-        for (int i = 0; i < originalParent.childCount; i++)
-        {
-            Transform sibling = originalParent.GetChild(i);
-
-            if (sibling == transform) continue;
-
-            // Verifica se o item arrastado está acima ou abaixo de outro item
-            if (rectTransform.position.y > sibling.position.y)
-            {
-                transform.SetSiblingIndex(i);
-                break;
-            }
-        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -67,5 +52,12 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         // Restaura o tamanho original do item
         LeanTween.scale(gameObject, Vector3.one, 0.2f).setEaseOutBack();
+    }
+
+    public void ResetPosition()
+    {
+        // Retorna o item à posição original
+        transform.position = originalPosition;
+        transform.SetParent(originalParent);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TierListManager : MonoBehaviour
 {
@@ -25,5 +26,6 @@ public class TierListManager : MonoBehaviour
         File.WriteAllLines(filePath, order);
 
         UnityEngine.Debug.Log("Ordem salva em: " + filePath);
+        SceneManager.LoadScene("LevelMenu");
     }
 }

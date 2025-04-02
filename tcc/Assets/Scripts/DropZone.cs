@@ -4,19 +4,41 @@ using UnityEngine.UI;
 
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private Image dropZoneImage;
+    private UnityEngine.UI.Image dropZoneImage; // Especifica explicitamente o namespace correto
+
+    public string correctItemName; // Nome do item correto para esta sombra
 
     private void Awake()
     {
-        dropZoneImage = GetComponent<Image>();
+        dropZoneImage = GetComponent<UnityEngine.UI.Image>(); // Especifica explicitamente o namespace correto
     }
 
     public void OnDrop(PointerEventData eventData)
     {
         GameObject droppedItem = eventData.pointerDrag;
+
         if (droppedItem != null)
         {
-            droppedItem.transform.SetParent(transform); // Define o novo pai do item arrastado
+            // Verifica se o item solto é o correto
+            if (droppedItem.name == correctItemName)
+            {
+                // Posiciona o item na sombra
+                droppedItem.transform.SetParent(transform);
+                droppedItem.transform.position = transform.position;
+
+                UnityEngine.Debug.Log("Item colocado corretamente: " + droppedItem.name); // Especifica UnityEngine.Debug
+            }
+            else
+            {
+                // Retorna o item à posição original
+                DraggableItem draggable = droppedItem.GetComponent<DraggableItem>();
+                if (draggable != null)
+                {
+                    draggable.ResetPosition();
+                }
+
+                UnityEngine.Debug.Log("Item incorreto: " + droppedItem.name); // Especifica UnityEngine.Debug
+            }
         }
     }
 
