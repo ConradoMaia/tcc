@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private UnityEngine.UI.Image dropZoneImage; // Especifica explicitamente o namespace correto
-
-    public string correctItemName; // Nome do item correto para esta sombra
+    private UnityEngine.UI.Image dropZoneImage;
+    public string correctItemName;
+    public GameManager gameManager;
 
     private void Awake()
     {
@@ -26,7 +26,13 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 droppedItem.transform.SetParent(transform);
                 droppedItem.transform.position = transform.position;
 
-                UnityEngine.Debug.Log("Item colocado corretamente: " + droppedItem.name); // Especifica UnityEngine.Debug
+                // Notifica o GameManager que um item foi colocado corretamente
+                if (gameManager != null)
+                {
+                    gameManager.ItemPlacedCorrectly();
+                }
+
+                UnityEngine.Debug.Log("Item colocado corretamente: " + droppedItem.name);
             }
             else
             {
@@ -37,7 +43,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                     draggable.ResetPosition();
                 }
 
-                UnityEngine.Debug.Log("Item incorreto: " + droppedItem.name); // Especifica UnityEngine.Debug
+                UnityEngine.Debug.Log("Item incorreto: " + droppedItem.name);
             }
         }
     }
