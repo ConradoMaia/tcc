@@ -410,6 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctItemName: Poltrona
+  gameManager: {fileID: 622960441}
 --- !u!1 &384978190
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctItemName: Quadro
+  gameManager: {fileID: 622960441}
 --- !u!1 &409468934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,6 +1297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctItemName: Espelho
+  gameManager: {fileID: 622960441}
 --- !u!1 &1290250074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctItemName: Banco
+  gameManager: {fileID: 622960441}
 --- !u!1 &1533033691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctItemName: Bancada
+  gameManager: {fileID: 622960441}
 --- !u!1 &1904164991
 GameObject:
   m_ObjectHideFlags: 0
