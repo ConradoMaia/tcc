@@ -6,17 +6,17 @@ public class RespiracaoController : MonoBehaviour
     // Referências aos objetos da cena
     public GameObject flor; // Objeto da flor
     public GameObject caule; // Objeto do caule
-    public GameObject vela; // Objeto da vela
+    public GameObject velaCompleta; // Objeto pai da vela (contém a base e a chama)
     public GameObject telaOpcoes; // Tela com os botões de opções
 
     private Animator florAnimator; // Animator da flor
-    private Animator velaAnimator; // Animator da vela
+    private VelaController velaController; // Script para controlar a vela
 
     void Start()
     {
-        // Obter os componentes Animator dos objetos
+        // Obter os componentes Animator e o controlador da vela
         florAnimator = flor.GetComponent<Animator>();
-        velaAnimator = vela.GetComponent<Animator>();
+        velaController = velaCompleta.GetComponent<VelaController>();
 
         // Iniciar o ciclo de respiração
         IniciarRespiracao();
@@ -27,7 +27,7 @@ public class RespiracaoController : MonoBehaviour
         // Ativar a flor e o caule, e iniciar a animação de inspiração
         flor.SetActive(true);
         caule.SetActive(true);
-        vela.SetActive(false);
+        velaCompleta.SetActive(false);
         telaOpcoes.SetActive(false);
 
         // Reproduzir a animação da flor
@@ -42,10 +42,13 @@ public class RespiracaoController : MonoBehaviour
         // Desativar a flor e o caule, e ativar a vela
         flor.SetActive(false);
         caule.SetActive(false);
-        vela.SetActive(true);
+        velaCompleta.SetActive(true);
 
-        // Reproduzir a animação da vela
-        velaAnimator.Play("VelaApagando");
+        // Iniciar a animação da chama da vela
+        if (velaController != null)
+        {
+            velaController.enabled = true; // Ativar o script da vela
+        }
 
         // Agendar a exibição da tela de opções após a animação da vela (6 segundos)
         Invoke("MostrarTelaOpcoes", 6f);
@@ -53,8 +56,8 @@ public class RespiracaoController : MonoBehaviour
 
     void MostrarTelaOpcoes()
     {
-        // Exibir a tela com os botões
-        vela.SetActive(false);
+        // Desativar a vela e exibir a tela com os botões
+        velaCompleta.SetActive(false);
         telaOpcoes.SetActive(true);
     }
 
