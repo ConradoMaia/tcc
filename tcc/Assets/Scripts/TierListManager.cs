@@ -5,20 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class TierListManager : MonoBehaviour
 {
-    public Transform tierListContainer;
+    public RectTransform[] fearObjects;
 
     public void SaveOrder()
     {
-        if (tierListContainer == null)
+        if (fearObjects == null || fearObjects.Length == 0)
         {
-            UnityEngine.Debug.LogError("Tier List Container não foi atribuído no Inspector!");
+            UnityEngine.Debug.LogError("Nenhum objeto foi atribuído para salvar a ordem!");
             return;
         }
 
+        // Ordena os objetos com base na posição Y
         List<string> order = new List<string>();
-        foreach (Transform child in tierListContainer)
+        foreach (var obj in fearObjects)
         {
-            order.Add(child.name); // Salva o nome de cada item na ordem atual
+            order.Add(obj.name);
         }
 
         // Salva a ordem em um arquivo

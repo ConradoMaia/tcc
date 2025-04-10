@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: ce9cd59495a3e234e9134bab6b6d3899
+guid: 400ef1d1849ff2b45920f9ec2af10f08
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6894999169920593895
-    second: 25_0
+      213: -919359243753511141
+    second: "Bot\xF5es - mini game info_0"
+  - first:
+      213: 1875028895066860115
+    second: "Bot\xF5es - mini game info_1"
+  - first:
+      213: -2684484842345418532
+    second: "Bot\xF5es - mini game info_2"
+  - first:
+      213: 3769513721691651557
+    second: "Bot\xF5es - mini game info_3"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +148,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 25_0
+      name: "Bot\xF5es - mini game info_0"
       rect:
         serializedVersion: 2
-        x: 340
-        y: 0
-        width: 399
-        height: 1523
+        x: 79
+        y: 604
+        width: 183
+        height: 701
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +163,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7efeab9b635ffaf50800000000000000
-      internalID: 6894999169920593895
+      spriteID: b17a91783a7cd33f0800000000000000
+      internalID: -919359243753511141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xF5es - mini game info_1"
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1233
+        width: 402
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35aad0288d0750a10800000000000000
+      internalID: 1875028895066860115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xF5es - mini game info_2"
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 754
+        width: 402
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd0b417424bcebad0800000000000000
+      internalID: -2684484842345418532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xF5es - mini game info_3"
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 286
+        width: 402
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed346512c0005430800000000000000
+      internalID: 3769513721691651557
       vertices: []
       indices: 
       edges: []
@@ -173,8 +248,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      25_0: 6894999169920593895
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

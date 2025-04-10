@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: ce9cd59495a3e234e9134bab6b6d3899
+guid: 4de1b4f00b3826249a1075738958872b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6894999169920593895
-    second: 25_0
+      213: 17208687746594183
+    second: Termometro de humor_0
+  - first:
+      213: 8755059345753626603
+    second: Termometro de humor_1
+  - first:
+      213: -4565472084498524228
+    second: Termometro de humor_2
+  - first:
+      213: -23998687613412479
+    second: Termometro de humor_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +148,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 25_0
+      name: Termometro de humor_0
       rect:
         serializedVersion: 2
-        x: 340
-        y: 0
-        width: 399
-        height: 1523
+        x: 107
+        y: 609
+        width: 182
+        height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +163,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7efeab9b635ffaf50800000000000000
-      internalID: 6894999169920593895
+      spriteID: 785bf28d5332d3000800000000000000
+      internalID: 17208687746594183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Termometro de humor_1
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1154
+        width: 230
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7db13b618308970800000000000000
+      internalID: 8755059345753626603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Termometro de humor_2
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 845
+        width: 230
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7d08bf35f24a0c0800000000000000
+      internalID: -4565472084498524228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Termometro de humor_3
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 536
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b1abd125dbaaff0800000000000000
+      internalID: -23998687613412479
       vertices: []
       indices: 
       edges: []
@@ -173,8 +248,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      25_0: 6894999169920593895
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
