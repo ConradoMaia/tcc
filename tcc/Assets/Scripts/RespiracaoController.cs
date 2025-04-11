@@ -22,7 +22,7 @@ public class RespiracaoController : MonoBehaviour
         IniciarRespiracao();
     }
 
-    void IniciarRespiracao()
+    public void IniciarRespiracao()
     {
         // Ativar a flor e o caule, e iniciar a animação de inspiração
         flor.SetActive(true);

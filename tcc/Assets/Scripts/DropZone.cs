@@ -58,6 +58,12 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         {
             UnityEngine.Debug.Log($"Item '{newItem.name}' foi movido de '{previousDropZone.name}' para '{name}'");
             previousDropZone.ClearCurrentItem(); // Limpa o item da DropZone anterior
+
+            // Se o GameManager estiver referenciado, notifica que o item foi removido da DropZone anterior
+            if (previousDropZone.gameManager != null)
+            {
+                previousDropZone.gameManager.UnregisterItem(newItem.name);
+            }
         }
 
         // Se já houver um item na DropZone atual, retorna o item anterior à posição original
@@ -68,6 +74,12 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             {
                 draggable.ResetPosition();
             }
+
+            // Notifica o GameManager que o item anterior foi removido
+            if (gameManager != null)
+            {
+                gameManager.UnregisterItem(currentItem.name);
+            }
         }
 
         // Posiciona o novo item na DropZone
@@ -76,6 +88,12 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         currentItem.transform.position = transform.position;
 
         UnityEngine.Debug.Log("Item colocado na área: " + currentItem.name);
+
+        // Notifica o GameManager que um item foi colocado corretamente
+        if (gameManager != null && validateCorrectItem && currentItem.name == correctItemName)
+        {
+            gameManager.RegisterItemPlaced(currentItem.name);
+        }
     }
 
     public void ClearCurrentItem()
