@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9b58a0fd99975429687554c7fd7e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalItemsNeeded: 5
+  totalItemsNeeded: 8
   popupManager: {fileID: 462738186}
 --- !u!1 &634394228
 GameObject:
