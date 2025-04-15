@@ -11,6 +11,7 @@ public class RespiracaoController : MonoBehaviour
 
     private Animator florAnimator; // Animator da flor
     private VelaController velaController; // Script para controlar a vela
+    private bool cicloIniciado = false; // Para garantir que o ciclo só inicie após o botão "Continuar"
 
     void Start()
     {
@@ -18,12 +19,24 @@ public class RespiracaoController : MonoBehaviour
         florAnimator = flor.GetComponent<Animator>();
         velaController = velaCompleta.GetComponent<VelaController>();
 
-        // Iniciar o ciclo de respiração
-        IniciarRespiracao();
+        // Certifique-se de que todos os elementos estão desativados inicialmente
+        ResetarElementos();
+    }
+
+    private void ResetarElementos()
+    {
+        // Desativar todos os elementos no início
+        flor.SetActive(false);
+        caule.SetActive(false);
+        velaCompleta.SetActive(false);
+        telaOpcoes.SetActive(false);
     }
 
     public void IniciarRespiracao()
     {
+        if (cicloIniciado) return; // Evitar que o ciclo seja iniciado mais de uma vez
+        cicloIniciado = true;
+
         // Ativar a flor e o caule, e iniciar a animação de inspiração
         flor.SetActive(true);
         caule.SetActive(true);
@@ -33,12 +46,15 @@ public class RespiracaoController : MonoBehaviour
         // Reproduzir a animação da flor
         florAnimator.Play("FlorInchando");
 
-        // Agendar a transição para a vela após a animação da flor (4 segundos)
-        Invoke("IniciarExpiracao", 4f);
+        // Usar uma Coroutine para gerenciar a transição
+        StartCoroutine(TransicaoParaVela());
     }
 
-    void IniciarExpiracao()
+    private System.Collections.IEnumerator TransicaoParaVela()
     {
+        // Esperar 4 segundos para a animação da flor
+        yield return new WaitForSeconds(4f);
+
         // Desativar a flor e o caule, e ativar a vela
         flor.SetActive(false);
         caule.SetActive(false);
@@ -50,11 +66,14 @@ public class RespiracaoController : MonoBehaviour
             velaController.enabled = true; // Ativar o script da vela
         }
 
-        // Agendar a exibição da tela de opções após a animação da vela (6 segundos)
-        Invoke("MostrarTelaOpcoes", 6f);
+        // Esperar 6 segundos para a animação da vela
+        yield return new WaitForSeconds(6f);
+
+        // Mostrar a tela de opções
+        MostrarTelaOpcoes();
     }
 
-    void MostrarTelaOpcoes()
+    private void MostrarTelaOpcoes()
     {
         // Desativar a vela e exibir a tela com os botões
         velaCompleta.SetActive(false);
@@ -65,6 +84,8 @@ public class RespiracaoController : MonoBehaviour
     public void RepetirTecnica()
     {
         // Reiniciar o ciclo de respiração
+        cicloIniciado = false; // Permitir que o ciclo seja reiniciado
+        ResetarElementos();
         IniciarRespiracao();
     }
 
