@@ -17,27 +17,27 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        // Carrega o nível desbloqueado
+        // Carrega o nï¿½vel desbloqueado
         unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 0);
 
         // Posiciona o personagem no degrau atual
         if (stairPositions.Count > 0 && characterTransform != null)
         {
-            // Define a posição exata do primeiro degrau
+            // Define a posiï¿½ï¿½o exata do primeiro degrau
             characterTransform.position = stairPositions[currentLevel].position;
 
-            // Opcionalmente, ajuste a posição Y para garantir que fique em cima do degrau
+            // Opcionalmente, ajuste a posiï¿½ï¿½o Y para garantir que fique em cima do degrau
             Vector3 pos = characterTransform.position;
-            // Ajuste este valor conforme necessário para alinhar com o degrau
+            // Ajuste este valor conforme necessï¿½rio para alinhar com o degrau
             float yOffset = 20f;
             characterTransform.position = new Vector3(pos.x, pos.y + yOffset, pos.z);
         }
     }
 
-    // Chamado quando o usuário clica em um degrau
+    // Chamado quando o usuï¿½rio clica em um degrau
     public void OnStairClicked(int stairIndex)
     {
-        // Verifica se o nível está desbloqueado
+        // Verifica se o nï¿½vel estï¿½ desbloqueado
         if (stairIndex <= unlockedLevel && !isMoving)
         {
             StartCoroutine(MoveCharacterToStair(stairIndex));
@@ -49,7 +49,7 @@ public class LevelManager : MonoBehaviour
     {
         isMoving = true;
 
-        // Determina a direção do movimento
+        // Determina a direï¿½ï¿½o do movimento
         int direction = (stairIndex > currentLevel) ? 1 : -1;
 
         // Move o personagem degrau por degrau
@@ -72,16 +72,24 @@ public class LevelManager : MonoBehaviour
         isMoving = false;
     }
 
-    // Inicia o nível selecionado
+    // Inicia o nï¿½vel selecionado
     public void PlaySelectedLevel()
     {
         if (currentLevel < levelSceneNames.Length)
         {
-            SceneManager.LoadScene(levelSceneNames[currentLevel]);
+            // Usa o SceneNavigator se disponÃ­vel, caso contrÃ¡rio usa o SceneManager diretamente
+            if (SceneNavigator.Instance != null)
+            {
+                SceneNavigator.Instance.NavigateToScene(levelSceneNames[currentLevel]);
+            }
+            else
+            {
+                SceneManager.LoadScene(levelSceneNames[currentLevel]);
+            }
         }
     }
 
-    // Desbloqueia o próximo nível (chamado quando um nível é concluído)
+    // Desbloqueia o prï¿½ximo nï¿½vel (chamado quando um nï¿½vel ï¿½ concluï¿½do)
     public static void UnlockNextLevel()
     {
         int currentUnlocked = PlayerPrefs.GetInt("UnlockedLevel", 0);
