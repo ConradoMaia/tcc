@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-// Classe de dados para armazenar informações sobre uma conquista
+// Classe de dados para armazenar informaï¿½ï¿½es sobre uma conquista
 [System.Serializable]
 public class AchievementData
 {
@@ -12,7 +12,7 @@ public class AchievementData
     public Sprite icon;
 }
 
-// Classe auxiliar para serialização de listas
+// Classe auxiliar para serializaï¿½ï¿½o de listas
 [System.Serializable]
 public class SerializableStringList
 {
@@ -43,16 +43,44 @@ public class AchievementSystem : MonoBehaviour
 
     public void UnlockAchievement(string achievementId)
     {
+        Debug.Log($"Tentando desbloquear conquista: {achievementId}");
+        
         AchievementData achievement = achievements.Find(a => a.id == achievementId);
-        if (achievement != null && !achievement.unlocked)
+        if (achievement != null)
         {
-            achievement.unlocked = true;
-            SaveAchievements();
+            if (!achievement.unlocked)
+            {
+                achievement.unlocked = true;
+                SaveAchievements();
 
-            // Mostrar notificação de conquista desbloqueada
-            UnityEngine.Debug.Log($"Conquista desbloqueada: {achievement.title}");
+                // Mostrar notificau00e7u00e3o de conquista desbloqueada
+                Debug.Log($"Conquista desbloqueada: {achievement.title}");
 
-            // Aqui você pode adicionar código para mostrar uma notificação visual
+                // Mostrar notificau00e7u00e3o visual se o sistema de notificau00e7u00e3o estiver disponu00edvel
+                if (AchievementNotification.Instance != null)
+                {
+                    AchievementNotification.Instance.ShowNotification(achievement);
+                }
+                else
+                {
+                    Debug.LogWarning("AchievementNotification.Instance u00e9 nulo. A notificau00e7u00e3o visual nu00e3o seru00e1 exibida.");
+                }
+            }
+            else
+            {
+                Debug.Log($"Conquista '{achievement.title}' ju00e1 estu00e1 desbloqueada.");
+            }
+        }
+        else
+        {
+            Debug.LogError($"Conquista com ID '{achievementId}' nu00e3o encontrada! Verifique se ela estu00e1 definida no Inspector.");
+            
+            // Listar todas as conquistas disponu00edveis para ajudar na depurau00e7u00e3o
+            Debug.Log("Conquistas disponu00edveis:");
+            foreach (var a in achievements)
+            {
+                Debug.Log($"- ID: {a.id}, Tu00edtulo: {a.title}");
+            }
         }
     }
 

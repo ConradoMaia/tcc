@@ -3,22 +3,22 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using static System.Net.Mime.MediaTypeNames;
 
-public class AchievementUI : MonoBehaviour
+public class AchievmentUI : MonoBehaviour
 {
     [SerializeField] private GameObject achievementPanel;
     [SerializeField] private GameObject achievementItemPrefab;
     [SerializeField] private Transform achievementContainer;
 
     [SerializeField] private Button closeButton;
-    [SerializeField] private Button openAchievementsButton; // Bot„o no menu principal
+    [SerializeField] private Button openAchievementsButton; // BotÔøΩo no menu principal
 
     private void Start()
     {
-        // Configurar botıes
+        // Configurar botÔøΩes
         closeButton.onClick.AddListener(CloseAchievementPanel);
         openAchievementsButton.onClick.AddListener(OpenAchievementPanel);
 
-        // Inicialmente, o painel est· fechado
+        // Inicialmente, o painel estÔøΩ fechado
         achievementPanel.SetActive(false);
     }
 
@@ -42,10 +42,10 @@ public class AchievementUI : MonoBehaviour
         }
         else
         {
-            UnityEngine.Debug.LogWarning("AchievementSystem n„o encontrado!");
+            UnityEngine.Debug.LogWarning("AchievementSystem nÔøΩo encontrado!");
         }
 
-        // Mostrar o painel com animaÁ„o
+        // Mostrar o painel com animaÔøΩÔøΩo
         achievementPanel.SetActive(true);
         achievementPanel.transform.localScale = Vector3.zero;
         LeanTween.scale(achievementPanel, Vector3.one, 0.3f).setEaseOutBack();
@@ -53,7 +53,7 @@ public class AchievementUI : MonoBehaviour
 
     private void CloseAchievementPanel()
     {
-        // Fechar o painel com animaÁ„o
+        // Fechar o painel com animaÔøΩÔøΩo
         LeanTween.scale(achievementPanel, Vector3.zero, 0.3f).setEaseInBack().setOnComplete(() => {
             achievementPanel.SetActive(false);
         });
@@ -61,31 +61,60 @@ public class AchievementUI : MonoBehaviour
 
     private void SetupAchievementItem(GameObject item, AchievementData achievement)
     {
-        // Configurar o visual do item de conquista
-        UnityEngine.UI.Image icon = item.transform.Find("Icon").GetComponent<UnityEngine.UI.Image>();
-        UnityEngine.UI.Text title = item.transform.Find("Title").GetComponent<UnityEngine.UI.Text>();
-        UnityEngine.UI.Text description = item.transform.Find("Description").GetComponent<UnityEngine.UI.Text>();
-        UnityEngine.UI.Image lockOverlay = item.transform.Find("LockOverlay").GetComponent<UnityEngine.UI.Image>();
-
-        // Definir dados
-        icon.sprite = achievement.icon;
-        title.text = achievement.title;
-        description.text = achievement.description;
-
-        // Definir estado (bloqueado/desbloqueado)
-        if (achievement.unlocked)
+        // Verificar se o item tem o componente AchievementItem
+        AchievementItem achievementItemComponent = item.GetComponent<AchievementItem>();
+        if (achievementItemComponent != null)
         {
-            lockOverlay.gameObject.SetActive(false);
-            icon.color = Color.white;
-            title.color = Color.white;
-            description.color = Color.white;
+            // Usar o m√©todo Setup do componente AchievementItem
+            achievementItemComponent.Setup(achievement);
+            return;
         }
-        else
+
+        // Fallback: configurar manualmente se n√£o tiver o componente
+        try
         {
-            lockOverlay.gameObject.SetActive(true);
-            icon.color = new Color(0.5f, 0.5f, 0.5f);
-            title.color = new Color(0.5f, 0.5f, 0.5f);
-            description.color = new Color(0.5f, 0.5f, 0.5f);
+            // Verificar se os componentes existem antes de acess√°-los
+            Transform iconTransform = item.transform.Find("Icon");
+            Transform titleTransform = item.transform.Find("Title");
+            Transform descriptionTransform = item.transform.Find("Description");
+            Transform lockOverlayTransform = item.transform.Find("LockOverlay");
+
+            if (iconTransform == null || titleTransform == null || 
+                descriptionTransform == null || lockOverlayTransform == null)
+            {
+                Debug.LogError("Prefab de conquista n√£o tem a estrutura esperada. Verifique se ele tem os filhos: Icon, Title, Description e LockOverlay");
+                return;
+            }
+
+            UnityEngine.UI.Image icon = iconTransform.GetComponent<UnityEngine.UI.Image>();
+            UnityEngine.UI.Text title = titleTransform.GetComponent<UnityEngine.UI.Text>();
+            UnityEngine.UI.Text description = descriptionTransform.GetComponent<UnityEngine.UI.Text>();
+            UnityEngine.UI.Image lockOverlay = lockOverlayTransform.GetComponent<UnityEngine.UI.Image>();
+
+            // Definir dados
+            if (icon != null) icon.sprite = achievement.icon;
+            if (title != null) title.text = achievement.title;
+            if (description != null) description.text = achievement.description;
+
+            // Definir estado (bloqueado/desbloqueado)
+            if (achievement.unlocked)
+            {
+                if (lockOverlay != null) lockOverlay.gameObject.SetActive(false);
+                if (icon != null) icon.color = Color.white;
+                if (title != null) title.color = Color.white;
+                if (description != null) description.color = Color.white;
+            }
+            else
+            {
+                if (lockOverlay != null) lockOverlay.gameObject.SetActive(true);
+                if (icon != null) icon.color = new Color(0.5f, 0.5f, 0.5f);
+                if (title != null) title.color = new Color(0.5f, 0.5f, 0.5f);
+                if (description != null) description.color = new Color(0.5f, 0.5f, 0.5f);
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Erro ao configurar item de conquista: {e.Message}");
         }
     }
 }

@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Configurações")]
+    [Header("Configuraï¿½ï¿½es")]
     public int totalItemsNeeded = 0; // Total de itens que precisam ser colocados
-    public PopupManager popupManager; // Referência ao PopupManager
+    public PopupManager popupManager; // Referï¿½ncia ao PopupManager
 
     private int correctItemsPlaced = 0; // Contador de itens colocados corretamente
-    private List<string> placedItems = new List<string>(); // Lista para rastrear itens já colocados
+    private List<string> placedItems = new List<string>(); // Lista para rastrear itens jï¿½ colocados
 
     public void RegisterItemPlaced(string itemName)
     {
-        // Verifica se o item já foi contabilizado antes
+        // Verifica se o item jï¿½ foi contabilizado antes
         if (!placedItems.Contains(itemName))
         {
             placedItems.Add(itemName);
@@ -44,22 +44,29 @@ public class GameManager : MonoBehaviour
             // Desbloquear a conquista
             if (AchievementSystem.Instance != null)
             {
+                UnityEngine.Debug.Log("Tentando desbloquear conquista: first_game_completed via GameManager");
                 AchievementSystem.Instance.UnlockAchievement("first_game_completed");
-                UnityEngine.Debug.Log("Tentando desbloquear conquista: first_game_completed");
+                
+                // Se houver uma conquista especu00edfica para este nu00edvel
+                string currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+                string levelAchievementId = $"level_{currentSceneName}_completed";
+                UnityEngine.Debug.Log($"Tentando desbloquear conquista do nu00edvel: {levelAchievementId}");
+                AchievementSystem.Instance.UnlockAchievement(levelAchievementId);
             }
             else
             {
-                UnityEngine.Debug.LogWarning("AchievementSystem não encontrado! A conquista não será desbloqueada.");
+                UnityEngine.Debug.LogWarning("AchievementSystem nu00e3o encontrado! A conquista nu00e3o seru00e1 desbloqueada.");
             }
 
-            // Mostrar popup de parabéns
+            // Mostrar popup de parabu00e9ns
             if (popupManager != null)
             {
+                UnityEngine.Debug.Log("Mostrando popup de parabu00e9ns via GameManager");
                 popupManager.ShowPopup();
             }
             else
             {
-                UnityEngine.Debug.LogError("PopupManager não está referenciado no GameManager!");
+                UnityEngine.Debug.LogError("PopupManager nu00e3o estu00e1 referenciado no GameManager!");
             }
         }
     }

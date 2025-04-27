@@ -4,17 +4,18 @@ using UnityEngine.UI;
 
 public class PopupManager : MonoBehaviour
 {
-    public GameObject popupPanel; // ReferÍncia ao painel do popup
-    public Button closeButton; // ReferÍncia ao bot„o de fechar
-    public AudioClip successSound; // Som de parabÈns
+    public GameObject popupPanel; // Refer√™ncia ao painel do popup
+    public Button closeButton; // Refer√™ncia ao bot√£o de fechar
+    public AudioClip successSound; // Som de parab√©ns
+    public string nextSceneName = "MoodThermometer"; // Cena para onde voltar ap√≥s fechar o popup
     private AudioSource audioSource; // Componente para tocar o som
 
     private void Start()
     {
-        // Certifique-se de que o popup est· desativado no inÌcio
+        // Certifique-se de que o popup est√° desativado no in√≠cio
         popupPanel.SetActive(false);
 
-        // Adiciona o evento de clique ao bot„o de fechar
+        // Adiciona o evento de clique ao bot√£o de fechar
         closeButton.onClick.AddListener(ClosePopup);
 
         // Configura o AudioSource
@@ -24,17 +25,26 @@ public class PopupManager : MonoBehaviour
 
     public void ShowPopup()
     {
+        Debug.Log("PopupManager: Mostrando popup");
+        
+        // Verifica se o painel existe
+        if (popupPanel == null)
+        {
+            Debug.LogError("PopupManager: popupPanel nu00e3o estu00e1 referenciado!");
+            return;
+        }
+        
         // Ativa o popup
         popupPanel.SetActive(true);
 
-        // Toca o som de parabÈns
+        // Toca o som de parab√©ns
         if (successSound != null)
         {
             audioSource.PlayOneShot(successSound);
         }
 
         // Anima o popup (aumenta de escala com efeito)
-        popupPanel.transform.localScale = Vector3.zero; // ComeÁa invisÌvel
+        popupPanel.transform.localScale = Vector3.zero; // Come√ßa invis√≠vel
         LeanTween.scale(popupPanel, Vector3.one, 0.5f).setEaseOutBack();
     }
 
@@ -44,7 +54,16 @@ public class PopupManager : MonoBehaviour
         LeanTween.scale(popupPanel, Vector3.zero, 0.5f).setEaseInBack().setOnComplete(() =>
         {
             popupPanel.SetActive(false);
-            SceneManager.LoadScene("MoodThermometer");
+            
+            // Usa o SceneNavigator se dispon√≠vel, caso contr√°rio usa o SceneManager diretamente
+            if (SceneNavigator.Instance != null)
+            {
+                SceneNavigator.Instance.NavigateToScene(nextSceneName);
+            }
+            else
+            {
+                SceneManager.LoadScene(nextSceneName);
+            }
         });
     }
 }

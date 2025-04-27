@@ -1,0 +1,39 @@
+# Instruu00e7u00f5es para criar o prefab do item de conquista
+
+1. Crie um GameObject vazio na hierarquia e nomeie-o como "AchievementItem"
+
+2. Adicione um componente Image para servir como fundo
+   - Ajuste o tamanho para cerca de 400x100 pixels
+   - Use uma cor de fundo escura (ex: #333333)
+   - Adicione um componente Layout Element com Preferred Width = 400 e Preferred Height = 100
+
+3. Adicione um GameObject filho chamado "Icon" com um componente Image
+   - Posicione-o u00e0 esquerda do item
+   - Defina o tamanho para cerca de 80x80 pixels
+   - Este seru00e1 o u00edcone da conquista
+
+4. Adicione um GameObject filho chamado "Title" com um componente Text
+   - Posicione-o u00e0 direita do u00edcone
+   - Use uma fonte clara e tamanho maior (ex: branco, 18pt, negrito)
+   - Este seru00e1 o tu00edtulo da conquista
+
+5. Adicione um GameObject filho chamado "Description" com um componente Text
+   - Posicione-o abaixo do tu00edtulo
+   - Use uma fonte clara e tamanho menor (ex: cinza claro, 14pt)
+   - Este seru00e1 a descriu00e7u00e3o da conquista
+
+6. Adicione um GameObject filho chamado "LockOverlay" com um componente Image
+   - Defina-o para cobrir todo o item
+   - Use uma imagem de cadeado ou uma cor semi-transparente
+   - Este seru00e1 exibido quando a conquista estiver bloqueada
+
+7. Adicione o componente AchievementItem ao GameObject principal
+   - Arraste os componentes correspondentes para os campos:
+     - Icon: o componente Image do GameObject "Icon"
+     - Title: o componente Text do GameObject "Title"
+     - Description: o componente Text do GameObject "Description"
+     - Lock Overlay: o componente Image do GameObject "LockOverlay"
+
+8. Arraste o GameObject para a pasta Prefabs para criar um prefab
+
+9. Delete o GameObject da hierarquia
