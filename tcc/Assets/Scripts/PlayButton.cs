@@ -1,38 +1,46 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayButton : MonoBehaviour
 {
-    public FearTierList fearTierList;
-    public string nextSceneName = "GameScene"; // Nome da cena do jogo
-
+    public LevelManager levelManager;
     private Button button;
 
     void Start()
     {
         button = GetComponent<Button>();
-        button.onClick.AddListener(OnPlayButtonClicked);
+        if (button != null)
+        {
+            button.onClick.AddListener(OnPlayButtonClicked);
+        }
+        else
+        {
+            Debug.LogError("PlayButton: Componente Button não encontrado!");
+        }
+
+        if (levelManager == null)
+        {
+            levelManager = FindObjectOfType<LevelManager>();
+            if (levelManager == null)
+            {
+                Debug.LogError("PlayButton: LevelManager não encontrado na cena!");
+            }
+        }
     }
 
     void OnPlayButtonClicked()
     {
-        // Salva a ordem dos medos antes de carregar a pr�xima cena
-        SaveFearOrder();
-
-        // Carrega a cena do jogo
-        SceneManager.LoadScene(nextSceneName);
+        if (levelManager != null)
+        {
+            levelManager.PlaySelectedLevel();
+        }
     }
 
-    void SaveFearOrder()
+    void OnDestroy()
     {
-        // Salva a ordem dos medos usando PlayerPrefs
-        for (int i = 0; i < fearTierList.fears.Count; i++)
+        if (button != null)
         {
-            PlayerPrefs.SetString("Fear_" + i, fearTierList.fears[i].fearName);
+            button.onClick.RemoveListener(OnPlayButtonClicked);
         }
-
-        PlayerPrefs.SetInt("FearCount", fearTierList.fears.Count);
-        PlayerPrefs.Save();
     }
 }

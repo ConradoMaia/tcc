@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LevelCompletionManager : MonoBehaviour
 {
@@ -29,26 +30,16 @@ public class LevelCompletionManager : MonoBehaviour
         
         Debug.Log("LevelCompletionManager: Completando nível");
         
-        // Marca o nu00edvel como completado
+        // Marca o nível como completado
         string currentSceneName = SceneManager.GetActiveScene().name;
         string completedKey = $"Level_{currentSceneName}_Completed";
         PlayerPrefs.SetInt(completedKey, 1);
         PlayerPrefs.Save();
         
-        // Desbloqueia o pru00f3ximo nu00edvel
+        // Desbloqueia o próximo nível
         LevelManager.UnlockNextLevel();
         
-        // Desbloquear a conquista especu00edfica deste nu00edvel, se definida
-        if (!string.IsNullOrEmpty(levelAchievementId) && AchievementSystem.Instance != null)
-        {
-            AchievementSystem.Instance.UnlockAchievement(levelAchievementId);
-            Debug.Log($"Conquista desbloqueada: {levelAchievementId}");
-            
-            // Desbloquear a conquista geral de completar um jogo (apenas na primeira vez)
-            AchievementSystem.Instance.UnlockAchievement("first_game_completed");
-        }
-        
-        // Mostrar popup de parabu00e9ns
+        // Mostrar popup de parabéns primeiro
         if (popupManager != null)
         {
             Debug.Log("LevelCompletionManager: Mostrando popup");
@@ -58,7 +49,35 @@ public class LevelCompletionManager : MonoBehaviour
         {
             Debug.LogError("LevelCompletionManager: PopupManager não está referenciado!");
         }
+
+        // Desbloquear conquistas após um pequeno delay para não sobrepor as animações
+        StartCoroutine(UnlockAchievementsWithDelay());
         
         levelCompleted = true;
+    }
+
+    private System.Collections.IEnumerator UnlockAchievementsWithDelay()
+    {
+        // Aguarda um pouco para dar tempo do popup aparecer
+        yield return new WaitForSeconds(1.5f);
+
+        if (AchievementSystem.Instance == null)
+        {
+            Debug.LogError("AchievementSystem não encontrado! Verifique se ele existe na cena.");
+            yield break;
+        }
+
+        // Desbloquear a conquista específica deste nível, se definida
+        if (!string.IsNullOrEmpty(levelAchievementId))
+        {
+            AchievementSystem.Instance.UnlockAchievement(levelAchievementId);
+            Debug.Log($"Conquista desbloqueada: {levelAchievementId}");
+            
+            // Aguarda um pouco entre as conquistas
+            yield return new WaitForSeconds(2f);
+            
+            // Desbloquear a conquista geral de completar um jogo (apenas na primeira vez)
+            AchievementSystem.Instance.UnlockAchievement("first_game_completed");
+        }
     }
 }

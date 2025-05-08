@@ -57,10 +57,15 @@ MonoBehaviour:
   - id: 02
     title: Ferramentas
     description: Passou do jogo das Ferramentas
-    unlocked: 1
+    unlocked: 0
     icon: {fileID: 3464886673305272344, guid: ff03df78d2a4aef41bc7d19de74d0cef, type: 3}
   - id: 03
     title: Ferramentas
     description: Passou do jogo das Sensacoes
     unlocked: 0
     icon: {fileID: -7941287382696823285, guid: 9957c6b73aa7e214891a4668961e92a1, type: 3}
+  - id: 04
+    title: Zerou o game
+    description: Passou em todos os jogos
+    unlocked: 0
+    icon: {fileID: -5613258321073069991, guid: ff03df78d2a4aef41bc7d19de74d0cef, type: 3}
