@@ -10,27 +10,23 @@ public class AchievmentUI : MonoBehaviour
     [SerializeField] private Transform achievementContainer;
 
     [SerializeField] private Button closeButton;
-    [SerializeField] private Button openAchievementsButton; // Bot�o no menu principal
+    [SerializeField] private Button openAchievementsButton;
 
     private void Start()
     {
-        // Configurar bot�es
         closeButton.onClick.AddListener(CloseAchievementPanel);
         openAchievementsButton.onClick.AddListener(OpenAchievementPanel);
 
-        // Inicialmente, o painel est� fechado
         achievementPanel.SetActive(false);
     }
 
     public void OpenAchievementPanel()
     {
-        // Limpar itens existentes
         foreach (Transform child in achievementContainer)
         {
             Destroy(child.gameObject);
         }
 
-        // Preencher com conquistas
         if (AchievementSystem.Instance != null)
         {
             List<AchievementData> achievements = AchievementSystem.Instance.GetAllAchievements();
@@ -42,10 +38,9 @@ public class AchievmentUI : MonoBehaviour
         }
         else
         {
-            UnityEngine.Debug.LogWarning("AchievementSystem n�o encontrado!");
+            UnityEngine.Debug.LogWarning("AchievementSystem não encontrado!");
         }
 
-        // Mostrar o painel com anima��o
         achievementPanel.SetActive(true);
         achievementPanel.transform.localScale = Vector3.zero;
         LeanTween.scale(achievementPanel, Vector3.one, 0.3f).setEaseOutBack();
@@ -53,7 +48,6 @@ public class AchievmentUI : MonoBehaviour
 
     private void CloseAchievementPanel()
     {
-        // Fechar o painel com anima��o
         LeanTween.scale(achievementPanel, Vector3.zero, 0.3f).setEaseInBack().setOnComplete(() => {
             achievementPanel.SetActive(false);
         });
@@ -61,19 +55,15 @@ public class AchievmentUI : MonoBehaviour
 
     private void SetupAchievementItem(GameObject item, AchievementData achievement)
     {
-        // Verificar se o item tem o componente AchievementItem
         AchievementItem achievementItemComponent = item.GetComponent<AchievementItem>();
         if (achievementItemComponent != null)
         {
-            // Usar o método Setup do componente AchievementItem
             achievementItemComponent.Setup(achievement);
             return;
         }
 
-        // Fallback: configurar manualmente se não tiver o componente
         try
         {
-            // Verificar se os componentes existem antes de acessá-los
             Transform iconTransform = item.transform.Find("Icon");
             Transform titleTransform = item.transform.Find("Title");
             Transform descriptionTransform = item.transform.Find("Description");
@@ -91,12 +81,10 @@ public class AchievmentUI : MonoBehaviour
             UnityEngine.UI.Text description = descriptionTransform.GetComponent<UnityEngine.UI.Text>();
             UnityEngine.UI.Image lockOverlay = lockOverlayTransform.GetComponent<UnityEngine.UI.Image>();
 
-            // Definir dados
             if (icon != null) icon.sprite = achievement.icon;
             if (title != null) title.text = achievement.title;
             if (description != null) description.text = achievement.description;
 
-            // Definir estado (bloqueado/desbloqueado)
             if (achievement.unlocked)
             {
                 if (lockOverlay != null) lockOverlay.gameObject.SetActive(false);

@@ -63,10 +63,8 @@ public class AchievementManager : MonoBehaviour
             achievementPanel.SetActive(true);
             achievementPanel.transform.localScale = Vector3.zero;
             
-            // Animate the panel
             LeanTween.scale(achievementPanel, Vector3.one, 0.3f).setEaseOutBack();
             
-            // Hide the panel after duration
             Invoke("HideAchievementPanel", displayDuration);
         }
     }
@@ -97,7 +95,6 @@ public class AchievementManager : MonoBehaviour
     private void LoadAchievements()
     {
         unlockedAchievements.Clear();
-        // You can add your achievement IDs here
         string[] achievementIds = new string[] { "FirstMinigameComplete" };
         
         foreach (string id in achievementIds)

@@ -47,30 +47,24 @@ public class AchievementNotification : MonoBehaviour
         {
             AchievementData achievement = (AchievementData)achievementQueue.Dequeue();
 
-            // Configurar a notificau00e7u00e3o
             achievementIcon.sprite = achievement.icon;
             achievementTitle.text = $"Conquista Desbloqueada!\n{achievement.title}";
 
-            // Tocar som
             if (unlockSound != null)
             {
                 AudioSource.PlayClipAtPoint(unlockSound, Camera.main.transform.position);
             }
 
-            // Mostrar com animau00e7u00e3o
             notificationPanel.SetActive(true);
             notificationPanel.transform.localScale = Vector3.zero;
             LeanTween.scale(notificationPanel, Vector3.one, 0.3f).setEaseOutBack();
 
-            // Esperar o tempo de exibiu00e7u00e3o
             yield return new WaitForSeconds(displayTime);
 
-            // Esconder com animau00e7u00e3o
             LeanTween.scale(notificationPanel, Vector3.zero, 0.3f).setEaseInBack();
             yield return new WaitForSeconds(0.3f);
             notificationPanel.SetActive(false);
 
-            // Pequena pausa entre notificau00e7u00f5es
             yield return new WaitForSeconds(0.5f);
         }
 

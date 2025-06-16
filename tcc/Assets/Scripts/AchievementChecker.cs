@@ -8,7 +8,6 @@ public class AchievementChecker : MonoBehaviour
 
     private void Start()
     {
-        // Verifica se todos os nu00edveis foram completados
         CheckAllLevelsCompleted();
     }
 
@@ -16,7 +15,6 @@ public class AchievementChecker : MonoBehaviour
     {
         bool allCompleted = true;
 
-        // Verifica cada nu00edvel
         foreach (string levelName in levelSceneNames)
         {
             string completedKey = $"Level_{levelName}_Completed";
@@ -27,7 +25,6 @@ public class AchievementChecker : MonoBehaviour
             }
         }
 
-        // Se todos os nu00edveis foram completados, desbloqueia a conquista
         if (allCompleted && AchievementSystem.Instance != null)
         {
             AchievementSystem.Instance.UnlockAchievement(allLevelsCompletedAchievementId);

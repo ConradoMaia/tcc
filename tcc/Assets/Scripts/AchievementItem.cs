@@ -10,12 +10,10 @@ public class AchievementItem : MonoBehaviour
 
     public void Setup(AchievementData achievement)
     {
-        // Definir dados
         icon.sprite = achievement.icon;
         title.text = achievement.title;
         description.text = achievement.description;
 
-        // Definir estado (bloqueado/desbloqueado)
         if (achievement.unlocked)
         {
             lockOverlay.gameObject.SetActive(false);

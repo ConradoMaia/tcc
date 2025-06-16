@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-// Classe de dados para armazenar informa��es sobre uma conquista
 [System.Serializable]
 public class AchievementData
 {
@@ -12,14 +11,12 @@ public class AchievementData
     public Sprite icon;
 }
 
-// Classe auxiliar para serializa��o de listas
 [System.Serializable]
 public class SerializableStringList
 {
     public List<string> items = new List<string>();
 }
 
-// Componente principal que gerencia as conquistas
 public class AchievementSystem : MonoBehaviour
 {
     public static AchievementSystem Instance { get; private set; }
@@ -53,10 +50,8 @@ public class AchievementSystem : MonoBehaviour
                 achievement.unlocked = true;
                 SaveAchievements();
 
-                // Mostrar notificau00e7u00e3o de conquista desbloqueada
                 Debug.Log($"Conquista desbloqueada: {achievement.title}");
 
-                // Mostrar notificau00e7u00e3o visual se o sistema de notificau00e7u00e3o estiver disponu00edvel
                 if (AchievementNotification.Instance != null)
                 {
                     AchievementNotification.Instance.ShowNotification(achievement);
@@ -75,7 +70,6 @@ public class AchievementSystem : MonoBehaviour
         {
             Debug.LogError($"Conquista com ID '{achievementId}' nu00e3o encontrada! Verifique se ela estu00e1 definida no Inspector.");
             
-            // Listar todas as conquistas disponu00edveis para ajudar na depurau00e7u00e3o
             Debug.Log("Conquistas disponu00edveis:");
             foreach (var a in achievements)
             {
@@ -97,7 +91,6 @@ public class AchievementSystem : MonoBehaviour
 
     private void SaveAchievements()
     {
-        // Cria uma lista simples de IDs de conquistas desbloqueadas
         List<string> unlockedIds = new List<string>();
         foreach (AchievementData achievement in achievements)
         {
@@ -107,7 +100,6 @@ public class AchievementSystem : MonoBehaviour
             }
         }
 
-        // Converte para JSON e salva
         SerializableStringList serializableList = new SerializableStringList();
         serializableList.items = unlockedIds;
         string json = JsonUtility.ToJson(serializableList);
@@ -122,7 +114,6 @@ public class AchievementSystem : MonoBehaviour
             string json = PlayerPrefs.GetString(SAVE_KEY);
             SerializableStringList unlockedIds = JsonUtility.FromJson<SerializableStringList>(json);
 
-            // Atualiza o estado das conquistas
             if (unlockedIds != null && unlockedIds.items != null)
             {
                 foreach (string id in unlockedIds.items)
