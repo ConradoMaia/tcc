@@ -248,7 +248,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Termometro de humor_0: 17208687746594183
+      Termometro de humor_1: 8755059345753626603
+      Termometro de humor_2: -4565472084498524228
+      Termometro de humor_3: -23998687613412479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

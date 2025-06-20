@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nuvem 1_0: 7163187852760884434
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

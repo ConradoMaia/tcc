@@ -248,7 +248,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Conquistas dentista_0: -5613258321073069991
+      Conquistas dentista_1: 3102292695979343341
+      Conquistas dentista_2: 3464886673305272344
+      Conquistas dentista_3: -7473773117290227794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

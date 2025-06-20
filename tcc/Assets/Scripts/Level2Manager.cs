@@ -10,23 +10,25 @@ public class Level2Manager : MonoBehaviour
     public GameObject instructionsPanel;
     public Button startButton;
     public Button backButton;
-    public Level2Tutorial tutorial;
     
-    [Header("Level Completion")]
+    [Header("Level Settings")]
     public int requiredToolInteractions = 5;
     private int toolInteractionsCount = 0;
     
     private DentalToolManager toolManager;
-    private LevelCompletionManager completionManager;
+    private GameManager gameManager;
     
-    private void Start()
+    void Awake()
     {
         toolManager = FindObjectOfType<DentalToolManager>();
-        completionManager = FindObjectOfType<LevelCompletionManager>();
-        
-        if (toolManager == null)
+        gameManager = FindObjectOfType<GameManager>();
+    }
+    
+    void Start()
+    {
+        if (gameManager != null)
         {
-            Debug.LogError("DentalToolManager not found in the scene!");
+            gameManager.totalItemsNeeded = requiredToolInteractions;
         }
         
         if (instructionsPanel != null)
@@ -47,10 +49,15 @@ public class Level2Manager : MonoBehaviour
         if (toolManager != null)
         {
             toolManager.OnToolInteraction += IncrementToolInteraction;
+            
+            if (toolManager.toolInfoPopup != null)
+            {
+                toolManager.toolInfoPopup.SetActive(false);
+            }
         }
     }
     
-    private void OnDestroy()
+    void OnDestroy()
     {
         if (toolManager != null)
         {
@@ -74,7 +81,6 @@ public class Level2Manager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("SceneNavigator not found in the scene!");
             SceneManager.LoadScene("LevelMenu");
         }
     }
@@ -83,21 +89,9 @@ public class Level2Manager : MonoBehaviour
     {
         toolInteractionsCount++;
         
-        if (toolInteractionsCount >= requiredToolInteractions)
+        if (gameManager != null)
         {
-            CompleteLevel();
-        }
-    }
-    
-    private void CompleteLevel()
-    {
-        if (completionManager != null)
-        {
-            completionManager.CompleteLevel();
-        }
-        else
-        {
-            Debug.LogWarning("LevelCompletionManager not found. Cannot mark level as complete.");
+            gameManager.RegisterItemPlaced("Tool_" + toolInteractionsCount);
         }
     }
 }

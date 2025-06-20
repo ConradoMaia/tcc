@@ -348,7 +348,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Personagem - pe\xE3o_0": 2112570197300716315
+      "Personagem - pe\xE3o_1": 7240522402699287278
+      "Personagem - pe\xE3o_2": -4674564853218475233
+      "Personagem - pe\xE3o_3": 7855526056907709062
+      "Personagem - pe\xE3o_4": -8407431138197391925
+      "Personagem - pe\xE3o_5": -1074578096621198933
+      "Personagem - pe\xE3o_6": -5563586473322189520
+      "Personagem - pe\xE3o_7": 3312607501665920949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

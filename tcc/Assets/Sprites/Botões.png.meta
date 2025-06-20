@@ -348,7 +348,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Bot\xF5es_0": -721829521168600773
+      "Bot\xF5es_1": -6023377718990241571
+      "Bot\xF5es_2": -9092095406749377480
+      "Bot\xF5es_3": 5145518439995565171
+      "Bot\xF5es_4": 4305435800281901570
+      "Bot\xF5es_5": 5326597738845211514
+      "Bot\xF5es_6": 1259790755719259268
+      "Bot\xF5es_7": 7117391204345283173
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

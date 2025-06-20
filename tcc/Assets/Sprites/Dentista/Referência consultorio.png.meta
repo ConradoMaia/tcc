@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Refer\xEAncia consultorio_0": -1261192194799275251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

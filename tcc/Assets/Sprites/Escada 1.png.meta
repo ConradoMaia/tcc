@@ -348,7 +348,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Escada 1_0: -2747093858981822392
+      Escada 1_1: 7568640941058420929
+      Escada 1_2: 7356699642153049609
+      Escada 1_3: -1521566195724355343
+      Escada 1_4: -7161729354713358961
+      Escada 1_5: -4361204707319788904
+      Escada 1_6: 454071566099869284
+      Escada 1_7: 5902040923317797011
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

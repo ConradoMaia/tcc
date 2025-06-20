@@ -23,6 +23,11 @@ public class SceneNavigator : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void NavigateToLevelMenu(string sceneName)
+    {
+        SceneManager.LoadScene("LevelMenu");
+    }
+
     public void NavigateToStartAndClearHistory(string startSceneName)
     {
         BackButton.ClearNavigationHistory();

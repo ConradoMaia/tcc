@@ -323,7 +323,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Elementos com transpar\xEAncia 2_0": 6047320889800722953
+      "Elementos com transpar\xEAncia 2_1": 6369239005855162922
+      "Elementos com transpar\xEAncia 2_2": -4601524224435436950
+      "Elementos com transpar\xEAncia 2_3": -6395831831357454444
+      "Elementos com transpar\xEAncia 2_4": -264250708167890602
+      "Elementos com transpar\xEAncia 2_5": -1271190722818878561
+      "Elementos com transpar\xEAncia 2_6": -2880072302359411189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

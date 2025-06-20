@@ -28,13 +28,11 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
-        // Procura o Canvas na hierarquia
         FindCanvas();
     }
 
     void Start()
     {
-        // Carrega o nível desbloqueado
         unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 0);
         
         if (characterTransform == null)
@@ -43,10 +41,8 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        // Configura o RectTransform do personagem
         SetupCharacterTransform();
 
-        // Posiciona o personagem no degrau atual
         if (stairPositions.Count > 0)
         {
             PositionCharacterOnStair(currentLevel);
@@ -59,10 +55,8 @@ public class LevelManager : MonoBehaviour
 
     private void FindCanvas()
     {
-        // Primeiro, tenta encontrar o Canvas pai
         mainCanvas = GetComponentInParent<Canvas>();
         
-        // Se não encontrar, procura em toda a cena
         if (mainCanvas == null)
         {
             mainCanvas = FindObjectOfType<Canvas>();
@@ -87,13 +81,11 @@ public class LevelManager : MonoBehaviour
             if (mainCanvas == null) return;
         }
 
-        // Garante que o personagem é filho do Canvas
         if (characterTransform.parent != mainCanvas.transform)
         {
             characterTransform.SetParent(mainCanvas.transform, true);
         }
 
-        // Configura o RectTransform do personagem para usar posicionamento relativo ao canto inferior direito
         characterTransform.anchorMin = new Vector2(1, 0);
         characterTransform.anchorMax = new Vector2(1, 0);
         characterTransform.pivot = new Vector2(0.5f, 0.5f);
@@ -111,13 +103,10 @@ public class LevelManager : MonoBehaviour
 
             RectTransform stairTransform = stairPositions[stairIndex];
             
-            // Obtém a posição do degrau em relação à âncora direita
             Vector2 stairPos = stairTransform.anchoredPosition;
             
-            // Calcula o offset considerando a largura do Canvas
             float rightEdgeOffset = canvasRectTransform.rect.width - stairPos.x;
             
-            // Define a posição do personagem para corresponder ao degrau
             characterTransform.anchoredPosition = new Vector2(-rightEdgeOffset + characterXOffset, stairPos.y + characterYOffset);
         }
     }
@@ -143,7 +132,6 @@ public class LevelManager : MonoBehaviour
         Vector2 startPos = characterTransform.anchoredPosition;
         RectTransform targetStair = stairPositions[stairIndex];
         
-        // Calcula a posição final considerando o alinhamento à direita
         float rightEdgeOffset = canvasRectTransform.rect.width - targetStair.anchoredPosition.x;
         Vector2 targetPos = new Vector2(-rightEdgeOffset + characterXOffset, targetStair.anchoredPosition.y + characterYOffset);
         

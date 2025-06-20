@@ -223,7 +223,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Elementos consult\xF3rio (2)_0": -5981936896002704868
+      "Elementos consult\xF3rio (2)_1": 5204783908561084410
+      "Elementos consult\xF3rio (2)_2": -1272251818963495610
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

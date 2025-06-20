@@ -223,7 +223,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Termometro de emo\xE7\xF5es_0": -6812386869494233160
+      "Termometro de emo\xE7\xF5es_1": -283742064368525052
+      "Termometro de emo\xE7\xF5es_2": 5385539025650018772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

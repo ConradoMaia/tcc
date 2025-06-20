@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Fundo consult\xF3rio 1_0": 2364375682629781043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

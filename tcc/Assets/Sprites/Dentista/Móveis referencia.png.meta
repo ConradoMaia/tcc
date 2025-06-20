@@ -223,7 +223,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "M\xF3veis referencia_0": 2198968913143912964
+      "M\xF3veis referencia_1": -4678520522740195015
+      "M\xF3veis referencia_2": 7267910733005768967
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
