@@ -608,8 +608,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Conquistas
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94b37a02c281d704d9541f4991827698, type: 2}
+  m_sharedMaterial: {fileID: -73610500127623887, guid: 94b37a02c281d704d9541f4991827698, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -633,8 +633,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1437,7 +1437,7 @@ RectTransform:
   m_GameObject: {fileID: 937042925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 203645633}
@@ -1446,7 +1446,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -516}
-  m_SizeDelta: {x: 207.4856, y: 117.057}
+  m_SizeDelta: {x: 241, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937042927
 MonoBehaviour:
@@ -1512,8 +1512,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -9092095406749377480, guid: 8c10fc53e84f7df4eb8d60ca4dff1d41, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1756,8 +1756,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -49.958008}
-  m_SizeDelta: {x: 0, y: -99.916}
+  m_AnchoredPosition: {x: 0, y: 0.008911133}
+  m_SizeDelta: {x: 0, y: 0.017944}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1043502414
 MonoBehaviour:
@@ -3337,7 +3337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.64907444, g: 0.66537076, b: 0.9622642, a: 0.392}
+  m_Color: {r: 0.9411765, g: 0.9137255, b: 0.8980392, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

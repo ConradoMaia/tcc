@@ -7,7 +7,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Vector3 originalPosition;
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
-    private RectTransform parentRectTransform; // Referência ao painel pai
+    private RectTransform parentRectTransform;
+    public Canvas canvas;
 
     private void Awake()
     {
@@ -31,19 +32,20 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
-        // Atualiza a posição do item com o cursor
-        rectTransform.position = eventData.position;
+        Vector2 localPoint;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRectTransform, eventData.position, canvas.worldCamera, out localPoint))
+        {
+            rectTransform.localPosition = localPoint;
 
-        // Limita o movimento do item para dentro do painel
-        Vector3[] worldCorners = new Vector3[4];
-        parentRectTransform.GetWorldCorners(worldCorners);
+            Vector3[] worldCorners = new Vector3[4];
+            parentRectTransform.GetWorldCorners(worldCorners);
 
-        Vector3 clampedPosition = rectTransform.position;
-        clampedPosition.y = Mathf.Clamp(clampedPosition.y, worldCorners[0].y, worldCorners[1].y); // Limita no eixo Y
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, worldCorners[0].x, worldCorners[2].x); // Limita no eixo X
-        rectTransform.position = clampedPosition;
+            Vector3 clampedPosition = rectTransform.position;
+            clampedPosition.y = Mathf.Clamp(clampedPosition.y, worldCorners[0].y, worldCorners[1].y);
+            clampedPosition.x = Mathf.Clamp(clampedPosition.x, worldCorners[0].x, worldCorners[2].x);
+            rectTransform.position = clampedPosition;
+        }
     }
-
     public void OnEndDrag(PointerEventData eventData)
     {
         // Restaura a opacidade

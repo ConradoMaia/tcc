@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     [Header("Level Settings")]
     public List<RectTransform> stairPositions = new List<RectTransform>();
     public string[] levelSceneNames;
-    
+
     [Header("Optional Settings")]
     public bool smoothMovement = true;
     public float movementCurveStrength = 0.5f;
@@ -34,7 +34,9 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 0);
-        
+
+        currentLevel = unlockedLevel;
+
         if (characterTransform == null)
         {
             UnityEngine.Debug.LogError("LevelManager: Character Transform não está configurado!");
@@ -56,7 +58,7 @@ public class LevelManager : MonoBehaviour
     private void FindCanvas()
     {
         mainCanvas = GetComponentInParent<Canvas>();
-        
+
         if (mainCanvas == null)
         {
             mainCanvas = FindObjectOfType<Canvas>();
@@ -102,11 +104,11 @@ public class LevelManager : MonoBehaviour
             }
 
             RectTransform stairTransform = stairPositions[stairIndex];
-            
+
             Vector2 stairPos = stairTransform.anchoredPosition;
-            
+
             float rightEdgeOffset = canvasRectTransform.rect.width - stairPos.x;
-            
+
             characterTransform.anchoredPosition = new Vector2(-rightEdgeOffset + characterXOffset, stairPos.y + characterYOffset);
         }
     }
@@ -131,10 +133,10 @@ public class LevelManager : MonoBehaviour
 
         Vector2 startPos = characterTransform.anchoredPosition;
         RectTransform targetStair = stairPositions[stairIndex];
-        
+
         float rightEdgeOffset = canvasRectTransform.rect.width - targetStair.anchoredPosition.x;
         Vector2 targetPos = new Vector2(-rightEdgeOffset + characterXOffset, targetStair.anchoredPosition.y + characterYOffset);
-        
+
         float distance = Vector2.Distance(startPos, targetPos);
         float journeyTime = distance / moveSpeed;
         float elapsedTime = 0f;
@@ -163,7 +165,7 @@ public class LevelManager : MonoBehaviour
         if (!isMoving && currentLevel < levelSceneNames.Length)
         {
             string sceneName = levelSceneNames[currentLevel];
-            
+
             if (string.IsNullOrEmpty(sceneName))
             {
                 UnityEngine.Debug.LogError($"LevelManager: Nome da cena não configurado para o nível {currentLevel}");

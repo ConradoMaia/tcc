@@ -6,9 +6,8 @@ public class DraggableFearItem : MonoBehaviour, IBeginDragHandler, IDragHandler,
     public int itemIndex;
     public FearTierList tierList;
 
-    // Opcional: Efeitos visuais durante o arrasto
     private Vector3 originalScale;
-    public float dragScale = 1.1f; // Escala durante o arrasto
+    public float dragScale = 1.1f;
 
     void Start()
     {

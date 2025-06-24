@@ -649,7 +649,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.57
+  m_MatchWidthOrHeight: 0.575
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1632,6 +1632,7 @@ MonoBehaviour:
     showingDetail: 0
   spacingBetweenItems: 400
   dragThreshold: 50
+  canvas: {fileID: 386229108}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

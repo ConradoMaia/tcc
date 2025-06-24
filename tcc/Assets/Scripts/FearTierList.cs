@@ -24,6 +24,8 @@ public class FearTierList : MonoBehaviour
     private Vector2 dragStartPosition;
     private int draggedIndex;
     private Vector2[] originalPositions;
+    public Canvas canvas;
+
 
     void Start()
     {
@@ -64,18 +66,24 @@ public class FearTierList : MonoBehaviour
         // Opcional: Efeito visual para o item sendo arrastado
         draggedItem.itemTransform.SetAsLastSibling(); // Traz para frente
     }
-
+    
     public void OnDrag(BaseEventData eventData)
     {
         if (draggedItem == null) return;
 
         PointerEventData pointerData = eventData as PointerEventData;
 
-        // Atualiza apenas a posição Y do item arrastado
-        draggedItem.itemTransform.position = new Vector3(
-            draggedItem.itemTransform.position.x,
-            pointerData.position.y,
-            draggedItem.itemTransform.position.z);
+        Vector2 localPoint;
+        RectTransform canvasRect = canvas.transform as RectTransform;
+
+        // Converte a posição da tela para local do canvas
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, pointerData.position, canvas.worldCamera, out localPoint))
+        {
+            // Atualiza somente o eixo Y (mantendo X original)
+            draggedItem.itemTransform.anchoredPosition = new Vector2(
+                draggedItem.itemTransform.anchoredPosition.x,
+                localPoint.y);
+        }
     }
 
     // Modifique o método EndDrag() no script FearTierList.cs
